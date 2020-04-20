@@ -2,19 +2,15 @@ package main
 
 import "fmt"
 
-func fp() *int {
-	x := 4
-	return &x
+func multiple(y *int) {
+	// รับค่าเข้ามาเป็น pointer
+	// ทำการ dereference โดยใช้ *ตัวแปร
+	*y = *y * 2
 }
 
 func main() {
-	a := fp()
-	fmt.Printf("Type of a = %T\n", a)
-	fmt.Println("a = ", a)
-	fmt.Println("*a = ", *a)
-
-	fmt.Println("a == fp(): ", a == fp()) 
-	// ผลลัพธ์ false เพราะว่าทุกครั้งที่เรียก fp() จะเป็นการสร้าง local variable ตัวใหม่ address ใหม่
-	
-	fmt.Println(a, fp())
+	x := 2
+	fmt.Println("x before :",x)
+	multiple(&x)	//ส่งเป็น address ของ x
+	fmt.Println("x after :",x)
 }
