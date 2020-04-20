@@ -1,16 +1,24 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-func multiple(y *int) {
-	// รับค่าเข้ามาเป็น pointer
-	// ทำการ dereference โดยใช้ *ตัวแปร
-	*y = *y * 2
-}
+type KG float64
+type LB float64
 
 func main() {
-	x := 2
-	fmt.Println("x before :",x)
-	multiple(&x)	//ส่งเป็น address ของ x
-	fmt.Println("x after :",x)
+	x := KG(3)
+	y := LB(3)
+
+	fmt.Println(x == y)     // error เพราะถือเป็นคนละ type กัน
+	fmt.Println(x == KG(y)) // เปรียบเทียบได้เพราะ เราทำการ cast type ของ y ให้เป็น KG
+	fmt.Println(x == 3)   // เปรียบเทียบได้เพราะ 3 ถือเป็นค่า constant และเป็นค่าที่สามารถแปลงเป็น float64 ได้
+	
+
+	result := x + 5
+	fmt.Println("result:", result) // เปรียบเทียบได้ เพราะ 5 เป็นค่าที่สามารถแปลงเป็น float64 ได้
+
+	result2 := x + "5" // error เพราะ "5" เป็นค่าที่ไม่สามารถแปลงเป็น float64 ได้
+	fmt.Println("result2:", result2)
 }
