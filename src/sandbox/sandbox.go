@@ -1,20 +1,20 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
+
+func fp() *int {
+	x := 4
+	return &x
+}
 
 func main() {
-	
-	x := 70
-	var p *int	 // ประกาศตัวแปร Pointer (*) ชนิด int มีค่า default = nil
-	p = &x		 // กำหนดให้ value ของ p = address ของ x
+	a := fp()
+	fmt.Printf("Type of a = %T\n", a)
+	fmt.Println("a = ", a)
+	fmt.Println("*a = ", *a)
 
-	fmt.Println("Value x : ", x)
-	fmt.Println("Address &x : ", &x)		// &x จะเป็นการอ้างอิงถึง Address ของตัวแปร x
-	fmt.Println("dereference Value *(&x)  : ", *(&x)) // *(&x) จะเป็นการ dereference ค่าของตัวแปร x (x ไม่ใช่ตัวแปร pointer)
-	fmt.Println("---------------------")
-	fmt.Println("Value p : ", p)
-	fmt.Println("Address &p : ", &p)
-	fmt.Println("dereference Value p  : ", *p)	// *p จะเป็นการ dereference ค่าของตัวแปร x ที่ตัวแปร p เก็บไว้
+	fmt.Println("a == fp(): ", a == fp()) 
+	// ผลลัพธ์ false เพราะว่าทุกครั้งที่เรียก fp() จะเป็นการสร้าง local variable ตัวใหม่ address ใหม่
+	
+	fmt.Println(a, fp())
 }
