@@ -3,15 +3,23 @@ package main
 import "fmt"
 
 func main() {
-	x := 5
-
-	if y := x + 1; (x <= 5) && false {
-		fmt.Println("if :", y)
-	} else if x <= 6 {
-		fmt.Println("else if :", y)
-	}else{
-		fmt.Println("else :", y)
+	x := "f"
+	// switch {....} => switch true {.....}
+	switch x {
+	case "a":
+		fmt.Println("a")
+		fallthrough
+	case "b":
+		fmt.Println("b")
+	case "c", "d", "e", "f":
+		fmt.Println("c", "d", "e", "f")
+		if x == "f" {
+			break;
+		}
+		fmt.Println("You are lucky")
+	case "z":
+	default:
+		fmt.Println("Case Default")
 	}
 
-	// fmt.Println(y) // error เพราะตัวแปร y อยู่ด้านนอกของ if else
 }
