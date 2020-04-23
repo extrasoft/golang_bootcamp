@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	"weight"
+	// "weight"
+	"github.com/extrasoft/golang_bootcamp/src/weight"
 )
 
 func main() {
