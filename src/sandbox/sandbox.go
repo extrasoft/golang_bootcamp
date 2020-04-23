@@ -2,12 +2,13 @@ package main
 
 import (
 	"fmt"
-	// "weight"
-	"github.com/extrasoft/golang_bootcamp/src/weight"
+	"math/rand"
+	"prime"
 )
 
 func main() {
-	w := weight.KG(1)
-	fmt.Println("KG:", w)
-	fmt.Println("KG to LB:", weight.KgToLB(w))
+	for i := 1; i <= 30; i++ {
+		rn := rand.Intn(1000000)
+		fmt.Printf("%d %t\n", rn, prime.IsPrime(rn))
+	}
 }
