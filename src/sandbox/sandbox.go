@@ -1,17 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"weight"
+)
 
 func main() {
-	// for init; condition; increment {}
-	for i := 0; i < 5; i++ {
-		if i == 2 {
-			continue // next loop
-		}
-		fmt.Println(i)
-		if i == 4 {
-			break // exit for loop
-		}
-	}
-
+	w := weight.KG(1)
+	fmt.Println("KG:", w)
+	fmt.Println("KG to LB:", weight.KgToLB(w))
 }

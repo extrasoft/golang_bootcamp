@@ -1,7 +1,5 @@
 package weight
 
 func KgToLB(kg KG) LB {
-	return kg / aa
+	return LB(kg * kgToLBRatio)
 }
-
-const aa = 2.20462262
