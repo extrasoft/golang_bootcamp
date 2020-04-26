@@ -11,4 +11,6 @@ func main() {
 	fmt.Println(string(s[3:6]))
 	fmt.Println(string(s[6:9]))
 	fmt.Println(string(r[3]))
+	e := string(07052)
+	fmt.Println(e)
 }
