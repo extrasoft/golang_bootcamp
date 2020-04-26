@@ -2,13 +2,13 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
-	"prime"
 )
 
 func main() {
-	for i := 1; i <= 30; i++ {
-		rn := rand.Intn(1000000)
-		fmt.Printf("%d %t\n", rn, prime.IsPrime(rn))
-	}
+	s := "hi-สวัสดี"
+	// y := []byte {0x68, 0x69, 0x2d, 0xe0, 0xb8, 0xaa, 0xe0, 0xb8, 0xa7, 0xe0, 0xb8, 0xb1, 0xe0, 0xb8, 0xaa, 0xe0, 0xb8, 0x94, 0xe0, 0xb8, 0xb5}
+	r := []rune(s)
+	fmt.Println(string(s[3:6]))
+	fmt.Println(string(s[6:9]))
+	fmt.Println(string(r[3]))
 }
