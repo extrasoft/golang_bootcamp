@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/olang\example\stringutil"
 )
 
 func main() {
